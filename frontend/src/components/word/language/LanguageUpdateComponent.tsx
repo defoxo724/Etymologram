@@ -5,6 +5,7 @@ import InputNumber from "../../inputs/InputNumber";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import type { Language } from "../../../model/Language";
+import { showPopup } from "../../../Common";
 
 interface LanguageUpdateComponentProps {
     languageId: number;
@@ -34,6 +35,7 @@ const LanguageUpdateComponent = (props: LanguageUpdateComponentProps) => {
             setShortName("");
             setAppearanceYear(null);
             setDisappearanceYear(null);
+            showPopup("Zaktualizowano język!");
         },
     });
 

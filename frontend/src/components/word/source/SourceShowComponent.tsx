@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import type { Source } from '../../../model/Source'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import axios from 'axios'
+import React, { useState } from "react";
+import type { Source } from "../../../model/Source";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 
 interface SourceShowComponentProps {
-    source: Source
+    source: Source;
 }
 
 const SourceShowComponent = (props: SourceShowComponentProps) => {
@@ -18,8 +18,8 @@ const SourceShowComponent = (props: SourceShowComponentProps) => {
             await axios.delete(`http://localhost:8080/api/sources/delete/${id}`);
         },
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['sources'] });
-        }
+            queryClient.invalidateQueries({ queryKey: ["sources"] });
+        },
     });
 
     const updateSource = useMutation({
@@ -28,9 +28,9 @@ const SourceShowComponent = (props: SourceShowComponentProps) => {
             return response.data;
         },
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['sources'] });
+            queryClient.invalidateQueries({ queryKey: ["sources"] });
             setIsEditing(false);
-        }
+        },
     });
 
     const handleSaveClick = () => {
@@ -49,33 +49,23 @@ const SourceShowComponent = (props: SourceShowComponentProps) => {
                     <h5 className="mb-3 text-primary">Edytuj źródło</h5>
                     <div className="mb-2">
                         <label className="form-label small fw-bold">Nazwa</label>
-                        <input
-                            className="form-control form-control-sm"
-                            value={editData.name}
-                            onChange={(e) => setEditData({ ...editData, name: e.target.value })}
-                        />
+                        <input className="form-control form-control-sm" value={editData.name} onChange={(e) => setEditData({ ...editData, name: e.target.value })} />
                     </div>
                     <div className="mb-2">
                         <label className="form-label small fw-bold">Opis</label>
-                        <textarea
-                            className="form-control form-control-sm"
-                            value={editData.description}
-                            onChange={(e) => setEditData({ ...editData, description: e.target.value })}
-                        />
+                        <textarea className="form-control form-control-sm" value={editData.description} onChange={(e) => setEditData({ ...editData, description: e.target.value })} />
                     </div>
                     <div className="mb-3">
                         <label className="form-label small fw-bold">URL</label>
-                        <input
-                            className="form-control form-control-sm"
-                            value={editData.url || ''}
-                            onChange={(e) => setEditData({ ...editData, url: e.target.value })}
-                        />
+                        <input className="form-control form-control-sm" value={editData.url || ""} onChange={(e) => setEditData({ ...editData, url: e.target.value })} />
                     </div>
                     <div className="d-flex gap-2">
                         <button className="btn btn-success btn-sm" onClick={handleSaveClick} disabled={updateSource.isPending}>
-                            {updateSource.isPending ? 'Zapisywanie...' : 'Zapisz'}
+                            {updateSource.isPending ? "Zapisywanie..." : "Zapisz"}
                         </button>
-                        <button className="btn btn-outline-secondary btn-sm" onClick={handleCancelClick}>Anuluj</button>
+                        <button className="btn btn-outline-secondary btn-sm" onClick={handleCancelClick}>
+                            Anuluj
+                        </button>
                     </div>
                 </div>
             </div>

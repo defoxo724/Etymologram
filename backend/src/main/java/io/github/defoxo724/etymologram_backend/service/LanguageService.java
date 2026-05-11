@@ -63,4 +63,15 @@ public class LanguageService {
         languageRepository.deleteById(id);
     }
 
+    public LanguageDTO updateLanguage(Long id, LanguageDTO newData) {
+        Language language = languageRepository.findById(id).orElseThrow();
+        language.setName(newData.getName());
+        language.setShortName(newData.getShortName());
+        language.setAppearanceYear(newData.getAppearanceYear());
+        language.setDisappearanceYear(newData.getDisappearanceYear());
+
+        Language updatedLanguage = languageRepository.save(language);
+        return languageMapper.modelToDTO(updatedLanguage);
+    }
+
 }

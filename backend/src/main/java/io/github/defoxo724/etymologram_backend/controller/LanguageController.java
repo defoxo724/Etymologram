@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,5 +39,15 @@ public class LanguageController {
     public ResponseEntity<Void> deleteLanguage(@PathVariable Long id) {
         languageService.deleteLanguage(id);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<LanguageDTO> getLanguage(@PathVariable Long id) {
+        return ResponseEntity.ok(languageService.getLanguageById(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<LanguageDTO> updateLanguage(@PathVariable Long id, @RequestBody LanguageDTO newData) {
+        return ResponseEntity.ok(languageService.updateLanguage(id, newData));
     }
 }

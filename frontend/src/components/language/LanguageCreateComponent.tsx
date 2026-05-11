@@ -1,11 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import type { Language } from "../../../model/Language";
+import type { Language } from "../../model/Language";
 import axios from "axios";
-import FormContainer from "../../inputs/FormContainer";
-import InputText from "../../inputs/InputText";
-import InputNumber from "../../inputs/InputNumber";
-import { showPopup } from "../../../Common";
+import FormContainer from "../inputs/FormContainer";
+import InputText from "../inputs/InputText";
+import InputNumber from "../inputs/InputNumber";
+import { showPopup } from "../../Common";
 
 const LanguageCreateComponent = () => {
     const queryClient = useQueryClient();

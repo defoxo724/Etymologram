@@ -1,11 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
-import type { Source } from "../../../model/Source";
+import type { Source } from "../../model/Source";
 import axios from "axios";
-import InputText from "../../inputs/InputText";
-import FormContainer from "../../inputs/FormContainer";
-import InputDate from "../../inputs/InputDate";
-import { showPopup } from "../../../Common";
+import InputText from "../inputs/InputText";
+import FormContainer from "../inputs/FormContainer";
+import InputDate from "../inputs/InputDate";
+import { showPopup } from "../../Common";
 
 interface SourceCreateComponentProps {
     wordId: number;

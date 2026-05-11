@@ -1,10 +1,10 @@
-import React from "react";
-import type { Word } from "../../../model/Word";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import React from "react";
+import type { Word } from "../../model/Word";
 import axios from "axios";
-import InputText from "../../inputs/InputText";
-import FormContainer from "../../inputs/FormContainer";
-import { showPopup } from "../../../Common";
+import { showPopup } from "../../Common";
+import FormContainer from "../inputs/FormContainer";
+import InputText from "../inputs/InputText";
 
 const WordCreateComponent = () => {
     const queryClient = useQueryClient();

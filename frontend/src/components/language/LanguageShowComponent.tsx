@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import type { Language } from "../../../model/Language";
+import type { Language } from "../../model/Language";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import Toast from "../../utils/Toast";
+import Toast from "../utils/Toast";
 import LanguageUpdateComponent from "./LanguageUpdateComponent";
 
 interface LanguageShowComponentProps {

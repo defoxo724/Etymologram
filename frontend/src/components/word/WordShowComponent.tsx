@@ -1,11 +1,11 @@
 import { useState } from "react";
-import type { Word } from "../../../model/Word";
+import type { Word } from "../../model/Word";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import Toast from "../../utils/Toast";
 import WordUpdateComponent from "./WordUpdateComponent";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import Toast from "../utils/Toast";
 
 interface WordShowComponentProps {
     word: Word;

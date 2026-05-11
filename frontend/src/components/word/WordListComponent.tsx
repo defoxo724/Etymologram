@@ -1,19 +1,17 @@
-import WordShowComponent from './WordShowComponent'
-import type { Word } from '../../../model/Word'
-import { useQuery, } from '@tanstack/react-query'
+import WordShowComponent from "./WordShowComponent";
+import type { Word } from "../../model/Word";
+import { useQuery } from "@tanstack/react-query";
 
 const WordListComponent = () => {
-
     const { data, isLoading, error } = useQuery({
-        queryKey: ['words'],
+        queryKey: ["words"],
         queryFn: async () => {
-            const response = await fetch('http://localhost:8080/api/words/');
+            const response = await fetch("http://localhost:8080/api/words/");
             return response.json();
-        }
-    })
+        },
+    });
     if (isLoading) return <p>Ładowanie danych...</p>;
     if (error) return <p>Błąd: {(error as Error).message}</p>;
-
 
     return (
         <div>
@@ -23,7 +21,7 @@ const WordListComponent = () => {
                 </div>
             ))}
         </div>
-    )
-}
+    );
+};
 
-export default WordListComponent
+export default WordListComponent;

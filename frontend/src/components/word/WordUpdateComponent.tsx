@@ -1,15 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
-import type { Word } from "../../../model/Word";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import type { Word } from "../../model/Word";
 import axios from "axios";
+import type { Language } from "../../model/Language";
+import { showPopup } from "../../Common";
+import FormContainer from "../inputs/FormContainer";
+import InputText from "../inputs/InputText";
+import InputSelect from "../inputs/InputSelect";
 import SourceCreateComponent from "../source/SourceCreateComponent";
 import SourceListComponent from "../source/SourceListComponent";
-import type { Language } from "../../../model/Language";
-import InputText from "../../inputs/InputText";
-import InputSelect from "../../inputs/InputSelect";
-import FormContainer from "../../inputs/FormContainer";
-import Swal from "sweetalert2";
-import { showPopup } from "../../../Common";
 
 interface WordUpdateComponentProps {
     wordId: number;

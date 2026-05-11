@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Source } from "../../../model/Source";
+import type { Source } from "../../model/Source";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 

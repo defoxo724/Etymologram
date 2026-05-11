@@ -1,11 +1,11 @@
 import React from "react";
-import FormContainer from "../../inputs/FormContainer";
-import InputText from "../../inputs/InputText";
-import InputNumber from "../../inputs/InputNumber";
+import FormContainer from "../inputs/FormContainer";
+import InputText from "../inputs/InputText";
+import InputNumber from "../inputs/InputNumber";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import type { Language } from "../../../model/Language";
-import { showPopup } from "../../../Common";
+import type { Language } from "../../model/Language";
+import { showPopup } from "../../Common";
 
 interface LanguageUpdateComponentProps {
     languageId: number;

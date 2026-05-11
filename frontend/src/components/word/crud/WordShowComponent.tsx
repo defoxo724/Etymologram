@@ -50,7 +50,6 @@ const WordShowComponent = (props: WordShowComponentProps) => {
     return (
         <div>
             <div>
-                <button onClick={() => setToastOpen(true)}></button>
                 <Toast isActive={toastOpen} onClose={() => setToastOpen(false)}>
                     {props.word.id !== undefined && (
                         <>

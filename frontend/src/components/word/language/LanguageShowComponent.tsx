@@ -29,7 +29,6 @@ const LanguageShowComponent = (props: LanguageShowComponentProps) => {
     return (
         <div>
             <div>
-                <button onClick={() => setToastOpen(true)}></button>
                 <Toast isActive={toastOpen} onClose={() => setToastOpen(false)}>
                     <LanguageUpdateComponent languageId={props.language.id!} />
                 </Toast>

@@ -8,6 +8,7 @@ Aplikacja jest słownikiem do którego można dodawać własne słowa, ich defin
 - VSCode
 - vite
 - npm
+- maven
 
 ### Języki
 - HTML 5
